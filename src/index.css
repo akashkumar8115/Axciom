@@ -8,3 +8,28 @@
   box-sizing: border-box;
 
 }
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f7f7;
+}
+
+h3 {
+  margin: 0;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.bg-gradient-to-br {
+  background: linear-gradient(to bottom right, #e0f7fa, #ede7f6);
+}
+.bg-white {
+  background-color: #ffffff;
+}

@@ -105,9 +105,9 @@ export default function Navbar() {
     ]
 
     const notifications = [
-        { id: 1, message: 'New member registration' },
-        { id: 2, message: 'Book return due today' },
-        { id: 3, message: 'System update available' }
+        { id: 1, message: 'New member registration', path: '/members', unread: true, icon: <People /> },
+        { id: 2, message: 'Book return due today', path: '/members', unread: false, icon: <LibraryBooks /> },
+        { id: 3, message: 'System update available', path: '/settings', unread: true, icon: <Settings /> },
     ]
 
     const handleProfileMenu = (event) => {
@@ -194,9 +194,11 @@ export default function Navbar() {
                 onClose={handleClose}
             >
                 {notifications.map((notification) => (
-                    <MenuItem key={notification.id} onClick={handleClose}>
+                    <MenuItem key={notification.id} onClick={() => { navigate(notification.path); handleClose(); }} >
+                        <ListItemIcon>{notification.icon}</ListItemIcon>
                         {notification.message}
                     </MenuItem>
+
                 ))}
             </Menu>
 
